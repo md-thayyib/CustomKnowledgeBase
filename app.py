@@ -19,6 +19,8 @@ except:
 def main():
     st.set_page_config(page_title="CustomKnowledgeBase",page_icon=":pen:",layout='wide')
     st.markdown("<h1 style='text-align: center;'>Custom Knowledge Base 🌞</h1>", unsafe_allow_html=True)
+    st.markdown("<h5 style ='text-align:center;'>Ask anything on documents</h5> ",unsafe_allow_html=True)
+
     st.markdown("<h6 style ='text-align:center;'>App created by Muhammed Thayyib</h6> ",unsafe_allow_html=True)
 
     # make a path for the files
@@ -31,7 +33,7 @@ def main():
             "## How to use\n"
             "1. Enter your [OpenAI API key](https://platform.openai.com/account/api-keys) below🔑\n"  # noqa: E501
             "2. Upload a pdf📄\n"
-            "3. Submit data\n"
+            "3. Click Submit\n"
             "4. Then ask any thing💬\n"
         )
 
