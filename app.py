@@ -83,8 +83,6 @@ def main():
             success_message.success("Vector has been created")
             time.sleep(2)  # Delay for 2 seconds
             success_message.empty()
-        else:
-            st.error("API Key Error")
     
 
     # Initialise session state variables
