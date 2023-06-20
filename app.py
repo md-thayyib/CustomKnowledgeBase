@@ -78,11 +78,13 @@ def main():
             #Save uploaded file into data folder
             with open(os.path.join(saved_path,file.name),'wb') as out_file:
                 out_file.write(bytes_data)
-        if submit_data:
+        if submit_data and api_key_input !="":
             create_vector()
             success_message.success("Vector has been created")
             time.sleep(2)  # Delay for 2 seconds
             success_message.empty()
+        else:
+            st.error("API Key Error")
     
 
     # Initialise session state variables
