@@ -21,8 +21,6 @@ def main():
     st.markdown("<h1 style='text-align: center;'>Custom Knowledge Base 📘</h1>", unsafe_allow_html=True)
     st.markdown("<h5 style ='text-align:center;'>Ask anything on documents</h5> ",unsafe_allow_html=True)
 
-    st.markdown("<h6 style ='text-align:right;font-size:12px'>App created by Muhammed Thayyib </h6> ",unsafe_allow_html=True) 
-
     
 
     # make a path for the files
@@ -59,6 +57,17 @@ def main():
         # Upload the file
         uploaded_file = st.file_uploader("Choose a pdf file",type="pdf",accept_multiple_files=True)
         submit_data = st.button('Submit')
+
+        
+        st.markdown(
+            """
+            <div style="position: fixed; bottom: 0; width: 100%; text-align: left;">
+             <h6 style ='text-align:left;font-size:12px'>Made by <a href = 'https://linkedin.com/in/md-thayyib'>md-thayyib</a> </h6> Contribute
+                <a style = 'font-size:12px' href ='https://github.com/md-thayyib/CustomKnowledgeBase'>Github</a>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
     def remove_existing_files(directory):
         for filename in os.listdir(directory):
@@ -135,15 +144,7 @@ def main():
                 del st.session_state['generated']
 
 
-    with st.container():
-        st.markdown(
-        """
-        <div style="position: fixed; bottom: 0; width: 100%; text-align: center;">
-            <a style = 'font-size:12px' href ='https://github.com/md-thayyib/CustomKnowledgeBase'>Github code</a>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+
 
 
 if __name__ == "__main__":
