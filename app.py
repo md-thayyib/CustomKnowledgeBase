@@ -18,10 +18,12 @@ except:
 
 def main():
     st.set_page_config(page_title="CustomKnowledgeBase",page_icon=":pen:",layout='wide')
-    st.markdown("<h1 style='text-align: center;'>Custom Knowledge Base 🌞</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>Custom Knowledge Base 📘</h1>", unsafe_allow_html=True)
     st.markdown("<h5 style ='text-align:center;'>Ask anything on documents</h5> ",unsafe_allow_html=True)
 
-    st.markdown("<h6 style ='text-align:center;'>App created by Muhammed Thayyib</h6> ",unsafe_allow_html=True)
+    st.markdown("<h6 style ='text-align:right;font-size:12px'>App created by Muhammed Thayyib </h6> ",unsafe_allow_html=True) 
+
+    
 
     # make a path for the files
     saved_path = "data"
@@ -103,8 +105,13 @@ def main():
 
     with container:
         with st.form(key='my_form', clear_on_submit=True):
-            user_input = st.text_area("You:", key='input', height=50)
-            submit_button = st.form_submit_button(label='Ask')
+            col1, col2 = st.columns([10,1])
+            with col1:
+                user_input = st.text_input("Hello", key='input',placeholder="Type your question \U0001F4E4",label_visibility="collapsed")
+            with col2:
+                submit_button = st.form_submit_button(label=':arrow_right:')
+    
+
 
         if submit_button and user_input:
             output = generate_response(user_input)
@@ -122,12 +129,22 @@ def main():
 
 
     with col2:
-        clear_button = st.button("Clear chat - Click Twice")
-        if clear_button:
-            del st.session_state['generated']
+        if st.session_state['generated']:
+            clear_button = st.button("Clear chat - Click Twice")
+            if clear_button:
+                del st.session_state['generated']
 
-    
-            
+
+    with st.container():
+        st.markdown(
+        """
+        <div style="position: fixed; bottom: 0; width: 100%; text-align: center;">
+            <a style = 'font-size:12px' href ='https://github.com/md-thayyib/CustomKnowledgeBase'>Github code</a>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
 
 if __name__ == "__main__":
     main()
