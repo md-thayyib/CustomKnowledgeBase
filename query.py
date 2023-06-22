@@ -2,12 +2,9 @@ from llama_index import StorageContext,load_index_from_storage
 import openai
 import os
 import streamlit as st
-# try:
-#     openai.api_key = os.environ["OPENAI_API_KEY"]
-# except:
-#     pass
+
 try:
-    openai.api_key = os.environ['OPENAI_API_KEY']
+    openai.api_key = os.environ["OPENAI_API_KEY"]
 except:
     pass
 

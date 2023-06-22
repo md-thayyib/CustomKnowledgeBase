@@ -7,21 +7,11 @@ import openai
 import os
 
 
-# OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-# openai.api_key = OPENAI_API_KEY
-# try:
-#     openai.api_key = os.environ["OPENAI_API_KEY"]
-# except:
-#     pass
+
 try:
-    openai.api_key = os.environ['OPENAI_API_KEY']
+    openai.api_key = os.environ["OPENAI_API_KEY"]
 except:
     pass
-
-
-    
-        
-    
         
 
 def create_vector():
