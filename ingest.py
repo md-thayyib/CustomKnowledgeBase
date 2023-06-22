@@ -9,22 +9,28 @@ import os
 
 # OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 # openai.api_key = OPENAI_API_KEY
+# try:
+#     openai.api_key = os.environ["OPENAI_API_KEY"]
+# except:
+#     pass
 try:
-    openai.api_key = os.environ["OPENAI_API_KEY"]
+    openai.api_key = os.environ['OPENAI_API_KEY']
 except:
     pass
 
 
+    
+        
+    
+        
+
 def create_vector():
-    # Check if index file already exists
-    # if os.path.exists("index"):
-    #     print("Index already exists. Skipping vector creation.")
-    #     return
+    # for filename in os.listdir('index'):
+    #     file_path = os.path.join('index', filename)
+    #     if os.path.isfile(file_path):
+    #         os.remove(file_path)
 
-    # Create a loader
-    if os.environ.get("OPENAI_API_KEY", "") != "":
 
-         
         loader = SimpleDirectoryReader(input_dir="data")
 
         #1 Load the documents
@@ -42,6 +48,3 @@ def create_vector():
         # 4. Store the index
         index.storage_context.persist(persist_dir="index")
         print("Vectors have been created.")
-
-    else:
-        print("Key eroor")
