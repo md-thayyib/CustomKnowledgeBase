@@ -20,7 +20,7 @@ def create_vector():
     #     if os.path.isfile(file_path):
     #         os.remove(file_path)
 
-
+    if os.environ.get('OPENAI_API_KEY'):
         loader = SimpleDirectoryReader(input_dir="data")
 
         #1 Load the documents
