@@ -40,7 +40,7 @@ with st.sidebar:
                                     type='password',
                                     placeholder="Paste your OpenAI API key here (sk-...)",
                                     help="You can get your API key from https://platform.openai.com/account/api-keys.",
-                                    # value=st.session_state.get("OPENAI_API_KEY", "")
+                                    value=st.session_state.get("OPENAI_API_KEY", "")
                                     )
     try:
         if api_key_input.startswith('sk'):
