@@ -46,10 +46,11 @@ with st.sidebar:
         if api_key_input.startswith('sk'):
             st.session_state['OPENAI_API_KEY'] = api_key_input
             os.environ['OPENAI_API_KEY'] = api_key_input
+            st.text(api_key_input)
     except OpenAIError as e:
         st.error("API Key Error")
     
-
+    
 
     # Upload the file
     uploaded_file = st.file_uploader("Choose a pdf file",type="pdf",accept_multiple_files=False,on_change=clear_file)

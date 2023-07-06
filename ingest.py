@@ -5,6 +5,7 @@ from llama_index.node_parser import SimpleNodeParser
 load_dotenv()
 import openai
 import os
+import streamlit as st
 
 
 
@@ -21,6 +22,7 @@ def create_vector():
     #         os.remove(file_path)
 
     if os.environ.get('OPENAI_API_KEY'):
+        st.write(os.environ["OPENAI_API_KEY"],'inside vector function')
         loader = SimpleDirectoryReader(input_dir="data")
 
         #1 Load the documents
